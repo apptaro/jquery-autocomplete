@@ -49,6 +49,7 @@
         selectClass: 'acSelect',
         queryParamName: 'q',
         extraParams: {},
+        xhrFields: {},
         remoteDataType: false,
         lineSeparator: '\n',
         cellSeparator: '|',
@@ -575,6 +576,7 @@
             this.dom.$elem.addClass(this.options.loadingClass);
             $.ajax({
                 url: this.makeUrl(filter),
+                xhrFields: self.options.xhrFields,
                 success: ajaxCallback,
                 error: function(jqXHR, textStatus, errorThrown) {
                     if($.isFunction(self.options.onError)) {
